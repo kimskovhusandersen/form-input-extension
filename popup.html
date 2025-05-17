@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Tooltip Viewer</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      padding: 16px;
+      width: 220px;
+      background: #f9f9f9;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .toggle-group {
+      display: flex;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .toggle-option {
+      flex: 1;
+      text-align: center;
+      padding: 8px;
+      cursor: pointer;
+      background: #fff;
+      transition: background 0.2s ease;
+      user-select: none;
+    }
+
+    .toggle-option.active {
+      background: #007bff;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .toggle-option:not(:last-child) {
+      border-right: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background: #005dc1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Show Attribute</h1>
+
+  <div class="toggle-group">
+    <div class="toggle-option active" data-attr="name">name</div>
+    <div class="toggle-option" data-attr="data-testid">data-testid</div>
+  </div>
+
+  <button id="inject">Toggle Tooltips</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
