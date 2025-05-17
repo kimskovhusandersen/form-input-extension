@@ -15,12 +15,16 @@ cp README.md temp_extension/
 mkdir -p temp_extension/icons
 cp icons/icon*.png temp_extension/icons/
 
-# Create the zip file
+# Create the zip file (ensuring manifest.json is at root)
 cd temp_extension
-zip -r ../form-input-extension.zip *
+zip -r ../form-input-extension.zip ./*
 cd ..
 
 # Clean up
 rm -rf temp_extension
 
-echo "Extension packaged as form-input-extension.zip" 
+echo "Extension packaged as form-input-extension.zip"
+
+# Verify the zip structure
+echo "Verifying zip structure..."
+unzip -l form-input-extension.zip | grep manifest.json 
