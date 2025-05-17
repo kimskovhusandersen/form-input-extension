@@ -14,7 +14,6 @@ check_file "manifest.json"
 check_file "content.js"
 check_file "popup.html"
 check_file "popup.js"
-check_file "background.js"
 
 # Check icons
 echo "Checking icons..."

@@ -8,7 +8,6 @@ cp manifest.json temp_extension/
 cp content.js temp_extension/
 cp popup.html temp_extension/
 cp popup.js temp_extension/
-cp background.js temp_extension/
 cp README.md temp_extension/
 
 # Create icons directory and copy icons
