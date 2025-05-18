@@ -25,6 +25,10 @@ function updateUI() {
   status.textContent = isEnabled
     ? "Tooltips are currently enabled"
     : "Tooltips are currently disabled";
+
+  // Update button classes
+  button.classList.remove("enabled", "disabled");
+  button.classList.add(isEnabled ? "enabled" : "disabled");
 }
 
 toggleOptions.forEach((el) => {
