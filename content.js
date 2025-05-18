@@ -26,8 +26,20 @@
   `;
   document.head.appendChild(style);
 
-  const { tooltipAttr } = await chrome.storage.local.get("tooltipAttr");
+  const { tooltipAttr, tooltipsEnabled } = await chrome.storage.local.get([
+    "tooltipAttr",
+    "tooltipsEnabled",
+  ]);
   const attribute = tooltipAttr || "name";
+
+  // Remove any existing tooltips
+  const existingTooltips = document.querySelectorAll(`.${TOOLTIP_CLASS}`);
+  existingTooltips.forEach((tooltip) => tooltip.remove());
+
+  // If tooltips are disabled, don't proceed
+  if (!tooltipsEnabled) {
+    return;
+  }
 
   // Cache DOM elements
   let formElements = null;
